@@ -44,7 +44,7 @@ export function mainVue(){
             lChange(locale){
                 global.settings.locale = locale;
                 global.queue.rename = true;
-                save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+                save.setItem('evolved',JSON.stringify(global));
                 if (webWorker.w){
                     webWorker.w.terminate();
                 }
@@ -60,7 +60,7 @@ export function mainVue(){
             },
             icon(icon){
                 global.settings.icon = icon;
-                save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+                save.setItem('evolved',JSON.stringify(global));
                 if (webWorker.w){
                     webWorker.w.terminate();
                 }

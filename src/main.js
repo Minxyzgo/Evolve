@@ -7846,7 +7846,7 @@ function longLoop(){
 
     // Save game state
     global.stats['current'] = Date.now();
-    save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+    save.setItem('evolved',JSON.stringify(global));
 
     if (global.settings.pause && webWorker.s){
         gameLoop('stop');

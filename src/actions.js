@@ -7032,7 +7032,7 @@ function sentience(){
     }
 
     if (global.race['slow'] || global.race['hyper'] || global.race.species === 'junker'){
-        save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+        save.setItem('evolved',JSON.stringify(global));
         if (webWorker.w){
             webWorker.w.terminate();
         }
@@ -7496,7 +7496,7 @@ export function bank_vault(){
 }
 
 function bioseed(){
-    save.setItem('evolveBak',LZString.compressToUTF16(JSON.stringify(global)));
+    save.setItem('evolveBak',JSON.stringify(global));
     global.lastMsg = false;
 
     let god = global.race.species;

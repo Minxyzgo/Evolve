@@ -4335,7 +4335,7 @@ const techs = {
             return `<div>${loc('tech_demonic_infusion_effect')}</div><div class="has-text-special">${loc('tech_demonic_infusion_effect2',[artifacts])}</div>`;
         },
         action(){
-            save.setItem('evolveBak',LZString.compressToUTF16(JSON.stringify(global)));
+            save.setItem('evolveBak',JSON.stringify(global));
             if (payCosts($(this)[0].cost)){
                 descension();
             }

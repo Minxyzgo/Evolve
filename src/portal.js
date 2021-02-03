@@ -4018,6 +4018,6 @@ export function descension(){
     Math.seed = Math.rand(0,10000);
     global.seed = Math.seed;
 
-    save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+    save.setItem('evolved',JSON.stringify(global));
     window.location.reload();
 }

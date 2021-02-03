@@ -1778,7 +1778,7 @@ function defineMad(){
 
 function warhead(){
     if (!global.civic.mad.armed && !global.race['cataclysm']){
-        save.setItem('evolveBak',LZString.compressToUTF16(JSON.stringify(global)));
+        save.setItem('evolveBak',JSON.stringify(global));
         global.lastMsg = false;
 
         let god = global.race.species;
@@ -1859,7 +1859,7 @@ function warhead(){
         Math.seed = Math.rand(0,10000);
         global.seed = Math.seed;
         
-        save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+        save.setItem('evolved',JSON.stringify(global));
         window.location.reload();
     }
 }

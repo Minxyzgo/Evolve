@@ -2180,7 +2180,7 @@ export function cleanAddTrait(trait){
             delete global.city['wharf'];
             break;
         case 'slow':
-            save.setItem('evolved',LZString.compressToUTF16(JSON.stringify(global)));
+            save.setItem('evolved',JSON.stringify(global));
             if (webWorker.w){
                 webWorker.w.terminate();
             }

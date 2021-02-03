@@ -67,7 +67,7 @@ Math.seededRandom = function(min, max, alt) {
     let global_data = save.getItem('evolved') || false;
     if (global_data) {
         // Load pre-existing game data
-        let saveState = JSON.parse(LZString.decompressFromUTF16(global_data));
+        let saveState = JSON.parse(global_data);
 
         if (saveState){
             global = saveState;
@@ -1460,7 +1460,7 @@ if (global['arpa'] && global.arpa['launch_facility'] && global.arpa.launch_facil
 }
 
 if (!(save.getItem('evolveBak'))){
-    save.setItem('evolveBak',LZString.compressToUTF16(JSON.stringify(global)));
+    save.setItem('evolveBak', JSON.stringify(global));
 }
 
 function newGameData(){

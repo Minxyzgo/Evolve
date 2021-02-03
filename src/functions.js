@@ -128,7 +128,7 @@ window.exportGame = function exportGame(){
 }
 
 window.importGame = function importGame(data,utf16){
-    let saveState = JSON.parse(utf16 ? LZString.decompressFromUTF16(data) : LZString.decompressFromBase64(data));
+    let saveState = JSON.parse(data);
     if (saveState && 'evolution' in saveState && 'settings' in saveState && 'stats' in saveState && 'plasmid' in saveState.stats){
         if (webWorker.w){
             webWorker.w.terminate();
