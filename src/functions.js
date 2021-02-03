@@ -124,7 +124,7 @@ window.exportGame = function exportGame(){
         return 'Export is not available during Race Creation';
     }
     global.stats['current'] = Date.now();
-    return LZString.compressToBase64(JSON.stringify(global));
+    return JSON.stringify(global);
 }
 
 window.importGame = function importGame(data,utf16){
